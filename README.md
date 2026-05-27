@@ -1,93 +1,104 @@
-# Industrial Energy Optimization & Monitoring System for Sinter Plant Machinery
+# Industrial Energy Optimization & Monitoring System
 
 ## Project Overview
 
-This project is an Industrial Telemetry Analytics Platform developed using real sinter plant machinery telemetry data.
+This project is a real-time industrial telemetry analytics platform developed using Python, PostgreSQL, Grafana, and Prophet forecasting.
 
-The system collects, stores, analyzes, visualizes, and predicts machine behavior to improve operational monitoring and energy optimization in industrial environments.
+The system simulates industrial sinter plant machinery monitoring by continuously streaming telemetry data into PostgreSQL and visualizing live operational metrics through Grafana dashboards.
+
+---
 
 ## Features
 
-- Industrial telemetry ingestion using Python
-- PostgreSQL backend for telemetry storage
-- Grafana SCADA-style dashboards
-- Industrial anomaly detection engine
+- Real-time telemetry streaming
+- Dynamic Grafana dashboards
+- Industrial anomaly detection
 - Predictive forecasting using Prophet
+- PostgreSQL telemetry backend
 - Intelligent recommendation system
+- SCADA-style monitoring interface
+- Auto-refreshing telemetry visualizations
+
+---
 
 ## Tech Stack
 
-### Languages
 - Python
-- SQL
-
-### Libraries
-- Pandas
-- NumPy
-- Matplotlib
-- Prophet
-- SQLAlchemy
-
-### Database
 - PostgreSQL
-
-### Dashboarding
 - Grafana
+- Pandas
+- SQLAlchemy
+- Prophet
+
+---
 
 ## System Architecture
 
-Telemetry CSV Data
-        ↓
-Python + Pandas
-        ↓
-PostgreSQL Database
-        ↓
-Grafana Dashboards
-        ↓
-Anomaly Detection
-        ↓
-Forecasting Engine
-        ↓
-Recommendation System
+Telemetry CSV Data  
+↓  
+Python Streaming Pipeline  
+↓  
+PostgreSQL Database  
+↓  
+Grafana Dashboards  
+↓  
+Anomaly Detection & Forecasting
 
-## Dashboard Features
-
-- Motor Current Trend Monitoring
-- Temperature Trend Analysis
-- Air Flow Monitoring
-- Industrial Alert Panels
-- Forecast Visualization
-- Predictive Recommendation Panels
-
-## Forecasting & Predictive Analytics
-
-The system uses Prophet time-series forecasting to predict future machine current trends and identify potential overload conditions before occurrence.
-
-Forecast-based warnings and intelligent operational recommendations are generated to support predictive industrial monitoring.
+---
 
 ## Dashboard Screenshots
 
 ### Main Dashboard
-![Dashboard](dashboard_screenshots/Dashboard.png)
 
-### Current Gauge
-![Gauge](dashboard_screenshots/Gauge.png)
+![Dashboard](dashboard_screenshots/dashboard.png)
+
+---
+
+### Current Gauges
+
+![Gauge](dashboard_screenshots/gauge.png)
+
+---
+
+### Forecast Graph
+
+![Forecast](dashboard_screenshots/forecast_graph.png)
+
+---
 
 ### Predictive Recommendations
-![Recommendations](dashboard_screenshots/Predictive_Recommendation.png)
+
+![Recommendations](dashboard_screenshots/predictive_recommendation.png)
+
+---
 
 ### Industrial Alerts
-![Alerts](dashboard_screenshots/Alert_Indicators.png)
 
-## Future Scope
+![Alerts](dashboard_screenshots/alert_indicators.png)
 
-- Predictive Maintenance
-- IIoT Integration
-- Digital Twin Systems
-- Edge Analytics
-- Cloud Deployment
-- Industrial AI Optimization
+---
 
-## Author
+## Key Functionalities
 
-Developed as an Industrial Internship Project focused on telemetry analytics, predictive monitoring, and industrial energy optimization.
+### Real-Time Monitoring
+- HT motor current monitoring
+- Outlet temperature tracking
+- Airflow analysis
+- Suction trend monitoring
+
+### Anomaly Detection
+- High motor current alerts
+- High outlet temperature alerts
+- Industrial event visualization
+
+### Forecasting
+- Predictive telemetry forecasting using Prophet
+- Future machine behavior estimation
+- Recommendation generation
+
+---
+
+## Installation
+
+```bash
+pip install -r requirements.txt
