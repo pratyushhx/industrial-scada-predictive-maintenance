@@ -60,11 +60,6 @@ Anomaly Detection & Forecasting
 
 ---
 
-### Forecast Graph
-
-![Forecast](dashboard_screenshots/forecast_graph.png)
-
----
 
 ### Predictive Recommendations
 
