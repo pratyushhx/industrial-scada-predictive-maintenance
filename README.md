@@ -74,10 +74,10 @@ Forecast-based warnings and intelligent operational recommendations are generate
 ![Gauge](dashboard_screenshots/Gauge.png)
 
 ### Predictive Recommendations
-![Recommendations](dashboard_screenshots/Predictive Recommendation.png)
+![Recommendations](dashboard_screenshots/Predictive_Recommendation.png)
 
 ### Industrial Alerts
-![Alerts](dashboard_screenshots/Alert Indicators.png)
+![Alerts](dashboard_screenshots/Alert_Indicators.png)
 
 ## Future Scope
 
