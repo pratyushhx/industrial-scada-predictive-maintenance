@@ -50,26 +50,26 @@ Anomaly Detection & Forecasting
 
 ### Main Dashboard
 
-![Dashboard](dashboard_screenshots/dashboard.png)
+![Dashboard](dashboard_screenshots/Dashboard.png)
 
 ---
 
 ### Current Gauges
 
-![Gauge](dashboard_screenshots/gauge.png)
+![Gauge](dashboard_screenshots/Gauge.png)
 
 ---
 
 
 ### Predictive Recommendations
 
-![Recommendations](dashboard_screenshots/predictive_recommendation.png)
+![Recommendations](dashboard_screenshots/Predictive_Recommendation.png)
 
 ---
 
 ### Industrial Alerts
 
-![Alerts](dashboard_screenshots/alert_indicators.png)
+![Alerts](dashboard_screenshots/Alert_Indicators.png)
 
 ---
 
