@@ -4,65 +4,101 @@
 
 This project is a real-time industrial telemetry analytics platform developed using Python, PostgreSQL, Grafana, and Prophet forecasting.
 
-The system simulates industrial sinter plant machinery monitoring by continuously streaming telemetry data into PostgreSQL and visualizing live operational metrics through Grafana dashboards.
+The system simulates industrial sinter plant machinery monitoring by continuously streaming telemetry data into PostgreSQL and visualizing live operational metrics through dynamic Grafana dashboards.
+
+The platform includes:
+- Real-time telemetry streaming
+- SCADA-style dashboard monitoring
+- Industrial anomaly detection
+- Predictive forecasting
+- Intelligent recommendation generation
 
 ---
 
 ## Features
 
-- Real-time telemetry streaming
-- Dynamic Grafana dashboards
-- Industrial anomaly detection
+- Real-time telemetry streaming using Python
+- Dynamic Grafana dashboards with auto-refresh
+- PostgreSQL telemetry backend integration
+- Industrial anomaly detection engine
 - Predictive forecasting using Prophet
-- PostgreSQL telemetry backend
 - Intelligent recommendation system
-- SCADA-style monitoring interface
-- Auto-refreshing telemetry visualizations
-
----
-
-## Real-Time Streaming
-
-This project implements a live telemetry streaming engine using Python and PostgreSQL.
-
-A continuous telemetry ingestion pipeline inserts industrial sensor readings into PostgreSQL at regular intervals, enabling Grafana dashboards to dynamically auto-refresh with live operational data.
-
-The streaming architecture simulates real-world industrial SCADA and IoT telemetry systems.
+- SCADA-style industrial monitoring interface
+- Live telemetry simulation pipeline
 
 ---
 
 ## Tech Stack
 
+### Languages
 - Python
-- PostgreSQL
-- Grafana
+- SQL
+
+### Libraries & Tools
 - Pandas
+- NumPy
+- Matplotlib
 - SQLAlchemy
 - Prophet
+- PostgreSQL
+- Grafana
+
+---
+
+## Project Structure
+
+```text
+industrial-telemetry-platform/
+│
+├── dashboard_screenshots/
+│
+├── data/
+│   └── industrial_telemetry.csv
+│
+├── notebooks/
+│   ├── telemetry_analysis.ipynb
+│   ├── anomaly_detection.ipynb
+│   └── forecasting.ipynb
+│
+├── sql/
+│   ├── telemetry_table.sql
+│   ├── anomaly_table.sql
+│   └── forecast_table.sql
+│
+├── live_stream.py
+├── requirements.txt
+└── README.md
+```
 
 ---
 
 ## System Architecture
 
-Telemetry CSV Data  
-↓  
-Python Streaming Pipeline  
-↓  
-PostgreSQL Database  
-↓  
-Grafana Dashboards  
-↓  
-Anomaly Detection & Forecasting
+```text
+Telemetry CSV Data
+        ↓
+Python Streaming Pipeline
+        ↓
+PostgreSQL Database
+        ↓
+Grafana Dashboards
+        ↓
+Anomaly Detection
+        ↓
+Forecasting Engine
+        ↓
+Recommendation System
+```
 
 ---
 
 ## Workflow
 
 1. Industrial telemetry CSV data is loaded using Pandas.
-2. Python streaming pipeline continuously inserts telemetry rows into PostgreSQL.
+2. Python streaming pipeline continuously inserts telemetry records into PostgreSQL.
 3. Grafana dynamically queries PostgreSQL and auto-refreshes dashboards.
 4. Prophet forecasting predicts future telemetry trends.
-5. Alert indicators detect industrial anomalies like:
+5. Alert indicators detect industrial anomalies such as:
    - High motor current
    - High outlet temperature
 6. Predictive recommendations are generated for operational monitoring.
@@ -82,7 +118,6 @@ Anomaly Detection & Forecasting
 ![Gauge](dashboard_screenshots/Gauge.png)
 
 ---
-
 
 ### Predictive Recommendations
 
@@ -112,11 +147,57 @@ Anomaly Detection & Forecasting
 ### Forecasting
 - Predictive telemetry forecasting using Prophet
 - Future machine behavior estimation
-- Recommendation generation
+- Intelligent operational recommendations
 
 ---
 
 ## Installation
 
+Install all dependencies:
+
 ```bash
 pip install -r requirements.txt
+```
+
+---
+
+## Run Project
+
+### Start Real-Time Telemetry Streaming
+
+```bash
+python live_stream.py
+```
+
+The script continuously inserts telemetry records into PostgreSQL, enabling Grafana dashboards to update dynamically in real time.
+
+---
+
+## Open Grafana Dashboard
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Future Enhancements
+
+- Apache Kafka integration
+- Docker deployment
+- MQTT IoT integration
+- Cloud-hosted telemetry pipelines
+- Predictive maintenance engine
+- Industrial AI recommendation systems
+
+---
+
+## GitHub Repository
+
+https://github.com/pratyushhx/Industrial-Energy-Optimization-System
+
+---
+
+## Author
+
+Developed as an Industrial Internship Project focused on telemetry analytics, predictive monitoring, industrial IoT simulation, and energy optimization systems.
