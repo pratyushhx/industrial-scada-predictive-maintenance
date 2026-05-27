@@ -21,6 +21,16 @@ The system simulates industrial sinter plant machinery monitoring by continuousl
 
 ---
 
+## Real-Time Streaming
+
+This project implements a live telemetry streaming engine using Python and PostgreSQL.
+
+A continuous telemetry ingestion pipeline inserts industrial sensor readings into PostgreSQL at regular intervals, enabling Grafana dashboards to dynamically auto-refresh with live operational data.
+
+The streaming architecture simulates real-world industrial SCADA and IoT telemetry systems.
+
+---
+
 ## Tech Stack
 
 - Python
@@ -43,6 +53,19 @@ PostgreSQL Database
 Grafana Dashboards  
 ↓  
 Anomaly Detection & Forecasting
+
+---
+
+## Workflow
+
+1. Industrial telemetry CSV data is loaded using Pandas.
+2. Python streaming pipeline continuously inserts telemetry rows into PostgreSQL.
+3. Grafana dynamically queries PostgreSQL and auto-refreshes dashboards.
+4. Prophet forecasting predicts future telemetry trends.
+5. Alert indicators detect industrial anomalies like:
+   - High motor current
+   - High outlet temperature
+6. Predictive recommendations are generated for operational monitoring.
 
 ---
 
