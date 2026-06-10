@@ -439,6 +439,6 @@ This project was inspired by industrial exhausters used in steel manufacturing p
 
 Pratyush Ranjan
 
-LinkedIn: www.linkedin.com/in/pratyush-ranjan-9468253a1
+LinkedIn: [Pratyush Ranjan](https://www.linkedin.com/in/pratyush-ranjan-9468253a1)
 
-GitHub: https://github.com/pratyushhx
+GitHub: [pratyushhx](https://github.com/pratyushhx)
