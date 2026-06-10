@@ -6,7 +6,7 @@ The platform generates realistic telemetry data, models machine degradation and 
 
 ---
 
-## Key Highlights
+# Key Highlights
 
 * Real-time industrial telemetry simulation
 * Condition monitoring and fault diagnosis
@@ -20,9 +20,9 @@ The platform generates realistic telemetry data, models machine degradation and 
 
 ---
 
-## Dashboard Screenshots
+# Dashboard Screenshots
 
-### Dashboard Overview
+# Dashboard Overview
 
 ![Dashboard Overview](Screenshots/dashboard-overview.png)
 
@@ -30,7 +30,7 @@ The complete SCADA dashboard showing machine KPIs, AI predictions, alarm statist
 
 ---
 
-### Executive KPIs
+# Executive KPIs
 
 ![Executive KPIs](Screenshots/executive-kpis.png)
 
@@ -38,7 +38,7 @@ Key performance indicators including Machine Health, Machine Efficiency, Remaini
 
 ---
 
-### Fault Detection & Maintenance Recommendation
+# Fault Detection & Maintenance Recommendation
 
 ![Fault Detection](Screenshots/fault-detection.png)
 
@@ -46,7 +46,7 @@ Example fault scenario showing anomaly detection, fault diagnosis, machine state
 
 ---
 
-### Telemetry Monitoring
+# Telemetry Monitoring
 
 ![Telemetry Monitoring](Screenshots/telemetry-monitoring.png)
 
@@ -54,7 +54,7 @@ Live industrial telemetry trends including temperature, pressure, airflow, motor
 
 ---
 
-### Historical Analysis
+# Historical Analysis
 
 ![Historical Analysis](Screenshots/historical-analysis.png)
 
@@ -62,13 +62,13 @@ Machine state timeline and maintenance decision history used for operational ana
 
 ---
 
-## System Architecture
+# System Architecture
 
 ![Architecture Diagram](Screenshots/architecture-diagram.png)
 
 The platform follows a Dockerized multi-service architecture consisting of an Industrial Machine Simulator, PostgreSQL database, Machine Learning Engine, Grafana SCADA Dashboard, and Predictive Maintenance Layer.
 
-### Data Flow
+# Data Flow
 
 1. The Industrial Machine Simulator generates realistic telemetry, machine degradation, fault conditions, and maintenance events.
 2. Telemetry and operational data are stored in PostgreSQL.
@@ -79,8 +79,8 @@ The platform follows a Dockerized multi-service architecture consisting of an In
 
 ---
 
-## Technology Stack
-## Core Concepts
+# Technology Stack
+# Core Concepts
 
 - SCADA
 - Predictive Maintenance
@@ -91,32 +91,32 @@ The platform follows a Dockerized multi-service architecture consisting of an In
 - Anomaly Detection
 - Time-Series Analytics
 
-### Programming & Data
+# Programming & Data
 
 * Python
 * SQL
 
-### Database
+# Database
 
 * PostgreSQL 16
 
-### Visualization
+# Visualization
 
 * Grafana
 
-### Machine Learning
+# Machine Learning
 
 * Scikit-Learn
 * Isolation Forest
 
-### Deployment
+# Deployment
 
 * Docker
 * Docker Compose
 
 ---
 
-## Simulated Industrial Parameters
+# Simulated Industrial Parameters
 
 The simulator continuously generates realistic telemetry for:
 
@@ -135,19 +135,19 @@ Sensor drift is incorporated to simulate realistic industrial operating behavior
 
 ---
 
-## Machine States
+# Machine States
 
 The system operates through three industrial states:
 
-### NORMAL
+# NORMAL
 
 Machine operating within expected limits.
 
-### WARNING
+# WARNING
 
 Abnormal conditions detected requiring monitoring.
 
-### FAULT
+# FAULT
 
 Critical operating condition requiring immediate intervention.
 
@@ -159,11 +159,11 @@ NORMAL → WARNING → FAULT → NORMAL
 
 ---
 
-## Fault Diagnosis
+# Fault Diagnosis
 
 The platform simulates common industrial equipment failures.
 
-### Bearing Failure
+# Bearing Failure
 
 Characteristics:
 
@@ -176,7 +176,7 @@ Recommended Action:
 
 ---
 
-### Cooling Failure
+# Cooling Failure
 
 Characteristics:
 
@@ -189,7 +189,7 @@ Recommended Action:
 
 ---
 
-### Motor Overload
+# Motor Overload
 
 Characteristics:
 
@@ -202,7 +202,7 @@ Recommended Action:
 
 ---
 
-## Machine Health Model
+# Machine Health Model
 
 Machine health is calculated from equipment operating conditions.
 
@@ -222,7 +222,7 @@ Higher vibration, temperature, and current reduce overall machine health.
 
 ---
 
-## Machine Efficiency
+# Machine Efficiency
 
 Machine efficiency is derived from:
 
@@ -239,7 +239,7 @@ Typical operating range:
 
 ---
 
-## Remaining Useful Life (RUL)
+# Remaining Useful Life (RUL)
 
 Remaining Useful Life estimates the number of operating hours before maintenance becomes necessary.
 
@@ -257,7 +257,7 @@ Typical range:
 
 ---
 
-## AI Anomaly Detection
+# AI Anomaly Detection
 
 The AI engine uses Isolation Forest for unsupervised anomaly detection.
 
@@ -279,13 +279,13 @@ The AI model operates independently from simulator state logic, allowing realist
 
 ---
 
-## Database Design
+# Database Design
 
 The complete PostgreSQL schema is available in:
 
 sql/schema.sql
 
-### sensors
+# sensors
 
 Stores machine telemetry and predictive maintenance information.
 
@@ -304,44 +304,44 @@ Key fields:
 * maintenance_action
 * estimated_rul
 
-### alarms
+# alarms
 
 Stores alarm information.
 
-### machine_events
+# machine_events
 
 Stores operational events and state transitions.
 
-### ai_predictions
+# ai_predictions
 
 Stores anomaly scores and AI predictions.
 
 ---
 
-## Grafana Dashboard
+# Grafana Dashboard
 
 The dashboard provides:
 
-### Executive KPIs
+# Executive KPIs
 
 * Machine Health
 * Machine Efficiency
 * Estimated Remaining Useful Life
 * AI Prediction
 
-### Decision Support
+# Decision Support
 
 * Current Plant State
 * Predicted Failure Cause
 * Recommended Maintenance Action
 
-### Alarm Monitoring
+# Alarm Monitoring
 
 * Warning Alarm Count
 * Critical Alarm Count
 * AI Anomaly Score
 
-### Telemetry Trends
+# Telemetry Trends
 
 * Outlet Temperature
 * Inlet Temperature
@@ -351,14 +351,14 @@ The dashboard provides:
 * Rotor Field Current
 * Machine Vibration
 
-### Historical Analysis
+# Historical Analysis
 
 * Machine State Timeline
 * Maintenance Decision History
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```text
 industrial-scada-predictive-maintenance/
@@ -386,7 +386,7 @@ industrial-scada-predictive-maintenance/
 
 ---
 
-## Learning Outcomes
+# Learning Outcomes
 
 This project demonstrates:
 
@@ -402,13 +402,13 @@ This project demonstrates:
 
 ---
 
-## Industrial Inspiration
+# Industrial Inspiration
 
 This project was inspired by industrial exhausters used in steel manufacturing processes and was developed based on concepts explored during an internship at SAIL Bokaro Steel Plant. The objective was to recreate key Industrial IoT, SCADA, condition monitoring, and predictive maintenance workflows in a simulated environment for learning and engineering analysis.
 
 ---
 
-## Future Improvements
+# Future Improvements
 
 * OPC-UA Integration
 * MQTT Data Ingestion
@@ -420,9 +420,9 @@ This project was inspired by industrial exhausters used in steel manufacturing p
 
 ---
 
-## Author
+# Author
 
-Pratyush Ranjan
+Name: Pratyush Ranjan
 
 LinkedIn: [Pratyush Ranjan](https://www.linkedin.com/in/pratyush-ranjan-9468253a1)
 
