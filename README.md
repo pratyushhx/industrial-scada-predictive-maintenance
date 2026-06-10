@@ -20,36 +20,62 @@ The platform generates realistic telemetry data, models machine degradation and 
 
 ---
 
+## Dashboard Screenshots
+
+### Dashboard Overview
+
+![Dashboard Overview](Screenshots/dashboard-overview.png)
+
+The complete SCADA dashboard showing machine KPIs, AI predictions, alarm statistics, maintenance recommendations, and live telemetry monitoring.
+
+---
+
+### Executive KPIs
+
+![Executive KPIs](Screenshots/executive-kpis.png)
+
+Key performance indicators including Machine Health, Machine Efficiency, Remaining Useful Life (RUL), and AI Risk Assessment.
+
+---
+
+### Fault Detection & Maintenance Recommendation
+
+![Fault Detection](Screenshots/fault-detection.png)
+
+Example fault scenario showing anomaly detection, fault diagnosis, machine state assessment, and recommended maintenance actions.
+
+---
+
+### Telemetry Monitoring
+
+![Telemetry Monitoring](Screenshots/telemetry-monitoring.png)
+
+Live industrial telemetry trends including temperature, pressure, airflow, motor current, rotor field current, and machine vibration.
+
+---
+
+### Historical Analysis
+
+![Historical Analysis](Screenshots/historical-analysis.png)
+
+Machine state timeline and maintenance decision history used for operational analysis and traceability.
+
+---
+
 ## System Architecture
 
-```text
-                        ┌─────────────────────┐
-                        │ Python Simulator    │
-                        │ Industrial Machine  │
-                        └──────────┬──────────┘
-                                   │
-                                   │ Telemetry
-                                   ▼
+![Architecture Diagram](Screenshots/architecture-diagram.png)
 
-                    ┌────────────────────────────┐
-                    │ PostgreSQL Database        │
-                    │ industrial_telemetry       │
-                    └───────┬───────────┬────────┘
-                            │           │
-                            │           │
-                            ▼           ▼
+The platform follows a Dockerized multi-service architecture consisting of an Industrial Machine Simulator, PostgreSQL database, Machine Learning Engine, Grafana SCADA Dashboard, and Predictive Maintenance Layer.
 
-              ┌─────────────────┐   ┌──────────────────┐
-              │ Grafana SCADA   │   │ ML Engine        │
-              │ Visualization   │   │ Isolation Forest │
-              └─────────────────┘   └─────────┬────────┘
-                                               │
-                                               ▼
+### Data Flow
 
-                                    ┌─────────────────┐
-                                    │ AI Predictions  │
-                                    └─────────────────┘
-```
+1. The Industrial Machine Simulator generates realistic telemetry, machine degradation, fault conditions, and maintenance events.
+2. Telemetry and operational data are stored in PostgreSQL.
+3. The ML Engine continuously analyzes telemetry using Isolation Forest for anomaly detection.
+4. AI predictions are written back to the database.
+5. Grafana visualizes KPIs, alarms, telemetry trends, machine states, and maintenance recommendations in real time.
+6. The Predictive Maintenance Layer combines telemetry, fault diagnosis, AI predictions, and Remaining Useful Life (RUL) estimation to support maintenance decisions.
 
 ---
 
@@ -332,54 +358,13 @@ The dashboard provides:
 
 ---
 
-## Dashboard Screenshots
-
-### Dashboard Overview
-
-![Dashboard Overview](Screenshots/dashboard-overview.png)
-
-The complete SCADA dashboard showing machine KPIs, AI predictions, alarm statistics, maintenance recommendations, and live telemetry monitoring.
-
----
-
-### Executive KPIs
-
-![Executive KPIs](Screenshots/executive-kpis.png)
-
-Key performance indicators including Machine Health, Machine Efficiency, Remaining Useful Life (RUL), and AI Risk Assessment.
-
----
-
-### Fault Detection & Maintenance Recommendation
-
-![Fault Detection](Screenshots/fault-detection.png)
-
-Example fault scenario showing anomaly detection, fault diagnosis, machine state assessment, and recommended maintenance actions.
-
----
-
-### Telemetry Monitoring
-
-![Telemetry Monitoring](Screenshots/telemetry-monitoring.png)
-
-Live industrial telemetry trends including temperature, pressure, airflow, motor current, rotor field current, and machine vibration.
-
----
-
-### Historical Analysis
-
-![Historical Analysis](Screenshots/historical-analysis.png)
-
-Machine state timeline and maintenance decision history used for operational analysis and traceability.
-
----
-
 ## Project Structure
 
 ```text
 industrial-scada-predictive-maintenance/
 
 ├── Screenshots/
+│   ├── architecture-diagram.png
 │   ├── dashboard-overview.png
 │   ├── executive-kpis.png
 │   ├── fault-detection.png
