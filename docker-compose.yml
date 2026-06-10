@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: scada_postgres
+
+    environment:
+      POSTGRES_DB: industrial_telemetry
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: PPAASSWWOORRDD
+      TZ: UTC
+      PGTZ: UTC
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: scada_grafana
+
+    environment:
+      GF_DATE_FORMATS_DEFAULT_TIMEZONE: UTC
+      TZ: UTC
+
+    ports:
+      - "3001:3000"
+
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+    depends_on:
+      - postgres
+
+    restart: unless-stopped
+
+  simulator:
+    build:
+      context: ./simulator
+
+    container_name: scada_simulator
+
+    depends_on:
+      - postgres
+
+    volumes:
+      - ./simulator:/app
+
+    restart: unless-stopped
+
+  ml_engine:
+    build:
+      context: ./ml_engine
+
+    container_name: scada_ml_engine
+
+    depends_on:
+      - postgres
+
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  grafana_data:
