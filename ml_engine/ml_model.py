@@ -1,13 +1,9 @@
 import psycopg2
 import pandas as pd
 import time
-
 from sklearn.ensemble import IsolationForest
 
-# ====================================
 # DATABASE CONNECTION
-# ====================================
-
 conn = psycopg2.connect(
     host="postgres",
     database="industrial_telemetry",
@@ -17,10 +13,7 @@ conn = psycopg2.connect(
 
 cursor = conn.cursor()
 
-# ====================================
-# CREATE AI TABLE IF NOT EXISTS
-# ====================================
-
+# CREATE TABLE IF NOT EXISTS
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS ai_predictions (
     id SERIAL PRIMARY KEY,
@@ -34,18 +27,13 @@ conn.commit()
 
 print("AI Predictive Maintenance Model Started...", flush=True)
 
-# ====================================
 # AI LOOP
-# ====================================
-
 while True:
 
     try:
 
-        # ====================================
-        # FETCH SENSOR DATA
-        # ====================================
 
+        # FETCH SENSOR DATA
         print("STEP 1: Querying sensor data...", flush=True)
 
         query = """
@@ -71,10 +59,7 @@ while True:
             flush=True
         )
 
-        # ====================================
         # CLEAN DATA
-        # ====================================
-
         df = df.dropna()
 
         print(
@@ -82,10 +67,7 @@ while True:
             flush=True
         )
 
-        # ====================================
         # CHECK DATA SIZE
-        # ====================================
-
         if len(df) < 100:
 
             print(
@@ -96,10 +78,7 @@ while True:
             time.sleep(5)
             continue
 
-        # ====================================
         # TRAIN MODEL
-        # ====================================
-
         print("STEP 5: Training Isolation Forest...", flush=True)
 
         model = IsolationForest(
@@ -112,10 +91,7 @@ while True:
 
         print("STEP 6: Model trained", flush=True)
 
-        # ====================================
         # PREDICTIONS
-        # ====================================
-
         predictions = model.predict(df)
 
         print("STEP 7: Predictions generated", flush=True)
@@ -127,16 +103,10 @@ while True:
         latest_prediction = predictions[0]
         latest_score = scores[0]
 
-        # ====================================
         # SCORE SCALING
-        # ====================================
-
         scaled_score = latest_score * 100
 
-        # ====================================
         # CLASSIFICATION
-        # ====================================
-
         if latest_prediction == -1:
 
          if scaled_score < 0:
@@ -152,10 +122,7 @@ while True:
             flush=True
         )
 
-        # ====================================
         # STORE RESULT
-        # ====================================
-
         print(
             f"STEP 10: Inserting -> "
             f"Score={scaled_score:.2f}, "
